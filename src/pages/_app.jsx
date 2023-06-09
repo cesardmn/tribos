@@ -1,5 +1,6 @@
 // providers
-import { AudioUrlProvider } from '@/providers/AudioUrlProvider'
+import { AudioProvider } from '@/providers/AudioProvider'
+import { PlaylistProvider } from '@/providers/PlaylistProvider'
 import { OnPlayProvider } from '@/providers/OnPlayProvider'
 
 // styles
@@ -7,10 +8,12 @@ import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
   return (
-    <OnPlayProvider>
-      <AudioUrlProvider>
-        <Component {...pageProps} />
-      </AudioUrlProvider>
-    </OnPlayProvider>
+    <AudioProvider>
+      <PlaylistProvider>
+        <OnPlayProvider>
+          <Component {...pageProps} />
+        </OnPlayProvider>
+      </PlaylistProvider>
+    </AudioProvider>
   )
 }

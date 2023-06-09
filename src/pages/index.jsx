@@ -1,15 +1,22 @@
-import Player from '@/components/Player'
+// react
+
+//next
 import Head from 'next/head'
 
 //components
+import Player from '@/components/Player'
 import InputFiles from '@/components/InputFiles'
+import AudioList from '@/components/AudioList'
+import StopWatch from '@/components/StopWatch'
+import Blocks from '@/components/Blocks'
 
 // styles
 import { MdPlaylistPlay, MdDashboard } from 'react-icons/md'
-import AudioList from '@/components/AudioList'
-import StopWatch from '@/components/StopWatch'
+import { useState } from 'react'
 
 export default function App() {
+  const [page, setPage] = useState('AudioList')
+
   return (
     <>
       <Head>
@@ -29,7 +36,8 @@ export default function App() {
         </div>
 
         <div className="content box">
-          <AudioList />
+          {page === 'AudioList' && <AudioList />}
+          {page === 'Blocks' && <Blocks />}
         </div>
 
         <div className="box">
@@ -40,10 +48,10 @@ export default function App() {
           <span>
             <InputFiles />
           </span>
-          <span>
+          <span onClick={() => {setPage('Blocks')}} >
             <MdDashboard />
           </span>
-          <span>
+          <span onClick={() =>{setPage('AudioList')}} >
             <MdPlaylistPlay />
           </span>
         </nav>

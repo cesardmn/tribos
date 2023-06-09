@@ -4,26 +4,38 @@ import React from 'react'
 import { useAudio } from '@providers/AudioProvider'
 import { usePlaylist } from '@providers/PlaylistProvider'
 
+
+import { formatTime } from '../utils/index'
+
 import { MdAudioFile } from 'react-icons/md'
 
 export default function InputFiles() {
   const { setAudio } = useAudio()
   const { setPlaylist } = usePlaylist()
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     const inputTarget = e.target
     const inputFiles = [...inputTarget.files]
 
-    const fileObjects = (() =>
+    const fileObjects = await Promise.all(
       inputFiles.map((file) => {
-        return {
-          name: file.name
-            .replace(/\.[^\/.]+$/, '')
-            .trim()
-            .toUpperCase(),
-          src: URL.createObjectURL(file),
-        }
-      }))()
+        return new Promise((resolve, reject) => {
+          const audio = document.createElement('audio')
+          audio.addEventListener('loadedmetadata', () => {
+            resolve({
+              name: file.name
+                .replace(/\.[^/.]+$/, '')
+                .trim()
+                .toUpperCase(),
+              src: URL.createObjectURL(file),
+              duration: formatTime(audio.duration),
+            })
+          })
+          audio.addEventListener('error', reject)
+          audio.src = URL.createObjectURL(file)
+        })
+      })
+    )
 
     setPlaylist(fileObjects)
     setAudio(fileObjects[0])

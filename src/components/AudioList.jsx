@@ -22,7 +22,8 @@ export default function AudioList() {
               habdleSelect(music)
             }}
           >
-            {music.name}
+            <span>{music.name}</span>
+            <span className={styles.duration}>{music.duration}</span>
           </li>
         )
       })}

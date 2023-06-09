@@ -31,13 +31,13 @@ export default function App() {
 
         <nav>
           <span>
-            <MdPlaylistPlay />
+            <InputFiles />
           </span>
           <span>
             <MdDashboard />
           </span>
           <span>
-            <InputFiles />
+            <MdPlaylistPlay />
           </span>
         </nav>
       </main>

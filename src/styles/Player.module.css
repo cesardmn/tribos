@@ -24,7 +24,6 @@
   justify-content: space-between;
 }
 
-
 .seekBar {
   height: 10px;
   width: 100%;
@@ -37,4 +36,3 @@
   height: 10px;
   background-color: rgba(61, 60, 60, 0.949);
 }
-

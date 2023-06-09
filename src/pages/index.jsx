@@ -16,12 +16,12 @@ export default function App() {
         <title>Tribos</title>
         <meta name="description" content="Tribos Website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="./logo.png" />
+        <link rel="icon" href="./logo.ico" />
       </Head>
       <main className="noSelect">
         <div className="top">
           <span className="logo">
-            <img src="./logo.png" alt="" />
+            <img src="./logo.ico" alt="" />
           </span>
           <span>
             <StopWatch />

@@ -4,7 +4,6 @@ import React from 'react'
 import { useAudio } from '@providers/AudioProvider'
 import { usePlaylist } from '@providers/PlaylistProvider'
 
-
 import { formatTime } from '../utils/index'
 
 import { MdAudioFile } from 'react-icons/md'

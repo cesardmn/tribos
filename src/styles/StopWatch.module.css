@@ -1,12 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Rationale&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rationale&family=VT323&display=swap');
-
 .StopWatch {
+  height: auto;
+  width: 80%;
+  display: flex;
   font-size: var(--lg-2);
   font-weight: bold;
   padding: 0.2rem;
   margin-right: 0.2rem;
   font-variant-numeric: tabular-nums;
-  /* font-family: 'Rationale', sans-serif; */
-  /* font-family: 'VT323', monospace; */
+}
+
+.run {
+  color: var(--text-light);
+}
+
+.pause {
+  color: var(--text-bolder);
 }

@@ -11,7 +11,7 @@
   height: 10px;
   margin: 0 5px;
   border-radius: 5px;
-  background-color: grey;
+  background-color: var(--text-bolder);
 }
 
 .loadingBar:nth-child(2) {
@@ -28,7 +28,7 @@
 
 .animation {
   animation: loading-wave-animation 1s ease-in-out infinite;
-  background-color: grey;
+  background-color: var(--text-light);
 }
 
 @keyframes loading-wave-animation {

@@ -19,7 +19,7 @@ export default function App() {
         <link rel="icon" href="./logo.ico" />
       </Head>
       <main className="noSelect">
-        <div className="top">
+        <div className="top box">
           <span className="logo">
             <img src="./logo.ico" alt="" />
           </span>
@@ -28,11 +28,13 @@ export default function App() {
           </span>
         </div>
 
-        <div className="content">
+        <div className="content box">
           <AudioList />
         </div>
 
-        <Player />
+        <div className="box">
+          <Player />
+        </div>
 
         <nav>
           <span>

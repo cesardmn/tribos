@@ -7,11 +7,13 @@
 }
 
 .li {
-  height: 100%;
+  height: var(--lg-3);
+  width: 100%;
   padding: 1rem;
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid var(--text-bolder);
   font-size: large;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -20,5 +22,14 @@
 }
 
 .selected {
-  background-color: aqua;
+  background-color: var(--dark-complementary);
+}
+
+.noScrollBar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.noScrollBar:-webkit-scrollbar {
+  display: none;
 }

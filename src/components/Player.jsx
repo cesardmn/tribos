@@ -55,7 +55,10 @@ export default function Player() {
   const progressWidth = (currentTime / duration) * 100 + '%' // Calcula o percentual de progresso
 
   return (
-    <div className={styles.player} onClick={handlePlayStop}>
+    <div
+      className={`${styles.player} ${onPlay && styles.selected}`}
+      onClick={handlePlayStop}
+    >
       <div className={styles.titleWrapper}>
         <h3>{audio?.name}</h3>
         <Wave />

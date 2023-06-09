@@ -8,11 +8,11 @@ export default function AudioList() {
 
   const habdleSelect = (music) => {
     setAudio(music)
-    console.log(music)      
+    console.log(music)
   }
 
   return (
-    <ul className={styles.ul}>
+    <ul className={`${styles.ul} ${styles.noSrcollBar}`}>
       {playlist.map((music) => {
         const isSelected = music === audio
         return (

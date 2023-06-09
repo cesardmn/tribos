@@ -7,8 +7,10 @@ export default function StopWatch() {
   const [time, setTime] = useState(0)
   const [timer, setTimer] = useState(null)
   const [running, setRunning] = useState(false)
+  const [viewClass, setViewClass] = useState('pause')
 
   const play = () => {
+    setViewClass('run')
     setRunning(true)
     setTimer(
       setInterval(() => {
@@ -18,6 +20,7 @@ export default function StopWatch() {
   }
 
   const pause = () => {
+    setViewClass('pause')
     setRunning(false)
     clearInterval(timer)
     setTimer(null)
@@ -29,6 +32,7 @@ export default function StopWatch() {
   }
 
   const handleReset = () => {
+    setViewClass('pause')
     pause()
     setTime(0)
   }
@@ -37,7 +41,10 @@ export default function StopWatch() {
     <div
       onClick={handleRunning}
       onDoubleClick={handleReset}
-      className={styles.StopWatch}
+      className={`
+      ${styles.StopWatch} 
+      ${viewClass === 'run' ? styles.run : styles.pause}
+      `}
     >
       {formatWatch(time)}
     </div>

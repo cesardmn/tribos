@@ -1,19 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
 import { useOnPlay } from '@/providers/OnPlayProvider'
-import { useAudioUrl } from '@/providers/AudioUrlProvider'
+import { useAudio } from '@/providers/AudioProvider'
 import { formatTime } from '../utils/index'
 import styles from '@styles/Player.module.css'
 import { TbPlayerPlayFilled, TbPlayerStopFilled } from 'react-icons/tb'
 
-import Wave from './Wave'
+import Wave from '@components/Wave'
 
 export default function Player() {
   const { onPlay, setOnPlay } = useOnPlay()
-  const { audioUrl } = useAudioUrl()
+  const { audio } = useAudio()
 
   const [duration, setDuration] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
-  const [audioName, setAudioName] = useState('')
   const audioRef = useRef()
 
   const handlePlayStop = () => {
@@ -29,36 +28,36 @@ export default function Player() {
   }
 
   useEffect(() => {
-    const audio = audioRef.current
+    const currentAudio = audioRef.current
     audioRef.current.pause()
     audioRef.current.currentTime = 0
     setOnPlay(false)
 
-    setAudioName(audioUrl?.replace(/^.*[\\\/]/, '').replace(/\.[^/.]+$/, ''))
-
     const handleLoadedMetadata = () => {
-      setDuration(audio.duration)
+      setDuration(currentAudio.duration)
     }
 
     const handleTimeUpdate = () => {
-      setCurrentTime(audio.currentTime)
+      setCurrentTime(currentAudio.currentTime)
     }
 
-    audio.addEventListener('loadedmetadata', handleLoadedMetadata)
-    audio.addEventListener('timeupdate', handleTimeUpdate)
+    currentAudio.addEventListener('loadedmetadata', handleLoadedMetadata)
+    currentAudio.addEventListener('timeupdate', handleTimeUpdate)
+
+    // console.log(audio)
 
     return () => {
-      audio.removeEventListener('loadedmetadata', handleLoadedMetadata)
-      audio.removeEventListener('timeupdate', handleTimeUpdate)
+      currentAudio.removeEventListener('loadedmetadata', handleLoadedMetadata)
+      currentAudio.removeEventListener('timeupdate', handleTimeUpdate)
     }
-  }, [audioUrl])
+  }, [audio])
 
   const progressWidth = (currentTime / duration) * 100 + '%' // Calcula o percentual de progresso
 
   return (
     <div className={styles.player} onClick={handlePlayStop}>
       <div className={styles.titleWrapper}>
-        <h3>{audioName}</h3>
+        <h3>{audio?.name}</h3>
         <Wave />
       </div>
       {/* seek */}
@@ -84,7 +83,7 @@ export default function Player() {
         <span className="duration">{formatTime(duration)}</span>
       </div>
 
-      <audio src={audioUrl} ref={audioRef}></audio>
+      <audio src={audio?.src} ref={audioRef}></audio>
     </div>
   )
 }

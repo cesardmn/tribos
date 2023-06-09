@@ -7,6 +7,7 @@ import InputFiles from '@/components/InputFiles'
 // styles
 import { MdPlaylistPlay, MdDashboard } from 'react-icons/md'
 import AudioList from '@/components/AudioList'
+import StopWatch from '@/components/StopWatch'
 
 export default function App() {
   return (
@@ -15,12 +16,16 @@ export default function App() {
         <title>Tribos</title>
         <meta name="description" content="Tribos Website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="./logo.jpg" />
+        <link rel="icon" href="./logo.png" />
       </Head>
       <main className="noSelect">
         <div className="top">
-          <span>tribos</span>
-          <span>stopwatch</span>
+          <span className="logo">
+            <img src="./logo.png" alt="" />
+          </span>
+          <span>
+            <StopWatch />
+          </span>
         </div>
 
         <div className="content">

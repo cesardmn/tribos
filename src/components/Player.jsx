@@ -39,12 +39,13 @@ export default function Player() {
 
     const handleTimeUpdate = () => {
       setCurrentTime(currentAudio.currentTime)
+      if (currentAudio.currentTime === currentAudio.duration) {
+        setOnPlay(false)
+      }
     }
 
     currentAudio.addEventListener('loadedmetadata', handleLoadedMetadata)
     currentAudio.addEventListener('timeupdate', handleTimeUpdate)
-
-    // console.log(audio)
 
     return () => {
       currentAudio.removeEventListener('loadedmetadata', handleLoadedMetadata)

@@ -18,7 +18,7 @@ export default function AudioList() {
         return (
           <li
             key={music.name}
-            className={`${styles.li} ${isSelected ? styles.selected : ''}`}
+            className={`${styles.li} ${isSelected && styles.selected}`}
             onClick={() => {
               habdleSelect(music)
             }}

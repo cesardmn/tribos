@@ -17,6 +17,10 @@
   gap: 1rem;
 }
 
+.titleWrapper h3 {
+  font-size: medium;
+}
+
 .time {
   width: 100%;
   display: flex;

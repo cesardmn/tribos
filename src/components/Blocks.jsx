@@ -1,7 +1,3 @@
 export default function Blocks() {
-  return (
-    <div className="">
-      blocos
-    </div>
-  )
+  return <div className="">blocos</div>
 }

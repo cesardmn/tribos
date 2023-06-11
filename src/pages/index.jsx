@@ -23,12 +23,15 @@ export default function App() {
         <title>Tribos</title>
         <meta name="description" content="Tribos Website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="./logo.ico" />
+        <link rel="icon" href="./icon-192x192.png" sizes="192x192" />
+        <link rel="icon" href="./icon-256x256.png" sizes="256x256" />
+        <link rel="icon" href="./icon-384x384.png" sizes="384x384" />
+        <link rel="icon" href="./icon-512x512.png" sizes="512x512" />
       </Head>
       <main className="noSelect">
         <div className="top box">
           <span className="logo">
-            <img src="./logo.ico" alt="" />
+            <img src="./icon-192x192.png" alt="" />
           </span>
           <span>
             <StopWatch />
@@ -48,10 +51,18 @@ export default function App() {
           <span>
             <InputFiles />
           </span>
-          <span onClick={() => {setPage('Blocks')}} >
+          <span
+            onClick={() => {
+              setPage('Blocks')
+            }}
+          >
             <MdDashboard />
           </span>
-          <span onClick={() =>{setPage('AudioList')}} >
+          <span
+            onClick={() => {
+              setPage('AudioList')
+            }}
+          >
             <MdPlaylistPlay />
           </span>
         </nav>

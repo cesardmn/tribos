@@ -8,7 +8,6 @@ export default function AudioList() {
 
   const habdleSelect = (music) => {
     setAudio(music)
-    console.log(music)
   }
 
   return (

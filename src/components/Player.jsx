@@ -4,7 +4,6 @@ import { useAudio } from '@/providers/AudioProvider'
 import { formatTime } from '../utils/index'
 import styles from '@styles/Player.module.css'
 import { TbPlayerPlayFilled, TbPlayerStopFilled } from 'react-icons/tb'
-
 import Wave from '@components/Wave'
 
 export default function Player() {
@@ -17,7 +16,7 @@ export default function Player() {
 
   const handlePlayStop = () => {
     if (audioRef.current.src) {
-      setOnPlay(!onPlay)
+      setOnPlay(!onPlay)  
       if (onPlay) {
         audioRef.current.pause()
         audioRef.current.currentTime = 0
@@ -26,6 +25,21 @@ export default function Player() {
       }
     }
   }
+
+  const handleKeyDown = (event) => {
+    // Se a tecla pressionada for a tecla "ArrowRight" (código 39), chama a função handlePlayStop
+    if (event.keyCode === 39) {
+      handlePlayStop()
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [handlePlayStop])
 
   useEffect(() => {
     const currentAudio = audioRef.current
@@ -53,7 +67,7 @@ export default function Player() {
     }
   }, [audio])
 
-  const progressWidth = (currentTime / duration) * 100 + '%' // Calcula o percentual de progresso
+  const progressWidth = (currentTime / duration) * 100 + '%'
 
   return (
     <div
@@ -64,15 +78,11 @@ export default function Player() {
         <h3>{audio?.name}</h3>
         <Wave />
       </div>
-      {/* seek */}
       <div className={styles.seekBar}>
         <div className={styles.progress} style={{ width: progressWidth }}></div>
       </div>
-
-      {/* time */}
       <div className={styles.time}>
         <span className="currentTime">{formatTime(currentTime)}</span>
-
         <div className="playStop">
           {onPlay ? (
             <span>
@@ -86,7 +96,6 @@ export default function Player() {
         </div>
         <span className="duration">{formatTime(duration)}</span>
       </div>
-
       <audio src={audio?.src} ref={audioRef}></audio>
     </div>
   )

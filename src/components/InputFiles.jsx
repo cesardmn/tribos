@@ -8,6 +8,8 @@ import { formatTime } from '../utils/index';
 
 import { MdAudioFile } from 'react-icons/md';
 
+import styles from '@styles/InputFiles.module.css'
+
 export default function InputFiles() {
   const { setAudio, audio } = useAudio();
   const { playlist, setPlaylist } = usePlaylist();
@@ -70,8 +72,9 @@ export default function InputFiles() {
 
   return (
     <>
-      <label htmlFor="inputFiles">
+      <label htmlFor="inputFiles" className={styles.inputFiles} >
         <MdAudioFile />
+        import files
       </label>
       <input
         id="inputFiles"

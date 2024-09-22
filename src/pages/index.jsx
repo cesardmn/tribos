@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Player from '@/components/Player'
-import InputFiles from '@/components/InputFiles'
 import AudioList from '@/components/AudioList'
 import StopWatch from '@/components/StopWatch'
 import Blocks from '@/components/Blocks'
@@ -51,14 +50,13 @@ export default function App() {
         </div>
 
         <nav>
-          <span>
-            <InputFiles />
-          </span>
           <span onClick={() => setPage('Blocks')}>
             <MdDashboard />
+            BLOCOS
           </span>
           <span onClick={() => setPage('AudioList')}>
             <MdPlaylistPlay />
+            PLAYLIST
           </span>
         </nav>
       </main>

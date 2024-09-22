@@ -33,3 +33,13 @@
 .noScrollBar:-webkit-scrollbar {
   display: none;
 }
+
+.inputFile {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+}

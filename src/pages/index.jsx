@@ -1,21 +1,24 @@
-// react
-
-//next
 import Head from 'next/head'
-
-//components
 import Player from '@/components/Player'
 import InputFiles from '@/components/InputFiles'
 import AudioList from '@/components/AudioList'
 import StopWatch from '@/components/StopWatch'
 import Blocks from '@/components/Blocks'
-
-// styles
 import { MdPlaylistPlay, MdDashboard } from 'react-icons/md'
 import { useState } from 'react'
 
 export default function App() {
   const [page, setPage] = useState('AudioList')
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`)
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  };
 
   return (
     <>
@@ -30,8 +33,8 @@ export default function App() {
       </Head>
       <main className="noSelect">
         <div className="top box">
-          <span className="logo">
-            <img src="./icon-192x192.png" alt="" />
+          <span className="logo" onClick={toggleFullscreen} style={{ cursor: 'pointer' }}>
+            <img src="./icon-192x192.png" alt="Logo" />
           </span>
           <span>
             <StopWatch />
@@ -51,18 +54,10 @@ export default function App() {
           <span>
             <InputFiles />
           </span>
-          <span
-            onClick={() => {
-              setPage('Blocks')
-            }}
-          >
+          <span onClick={() => setPage('Blocks')}>
             <MdDashboard />
           </span>
-          <span
-            onClick={() => {
-              setPage('AudioList')
-            }}
-          >
+          <span onClick={() => setPage('AudioList')}>
             <MdPlaylistPlay />
           </span>
         </nav>

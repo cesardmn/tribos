@@ -5,6 +5,7 @@ import StopWatch from '@/components/StopWatch'
 import Blocks from '@/components/Blocks'
 import { MdPlaylistPlay, MdDashboard } from 'react-icons/md'
 import { useState } from 'react'
+import Watch from '@/components/Watch'
 
 export default function App() {
   const [page, setPage] = useState('AudioList')
@@ -32,12 +33,17 @@ export default function App() {
       </Head>
       <main className="noSelect">
         <div className="top box">
-          <span className="logo" onClick={toggleFullscreen} style={{ cursor: 'pointer' }}>
-            <img src="./icon-192x192.png" alt="Logo" />
-          </span>
-          <span>
+
+          <div className='cotainer-top' >
+            <div className="left" onClick={toggleFullscreen} >
+              <img src="./icon-192x192.png" alt="Logo" />
+              <Watch />
+            </div>
+
             <StopWatch />
-          </span>
+
+          </div>
+
         </div>
 
         <div className="content box">

@@ -144,3 +144,22 @@ nav span {
   align-items: center;
   justify-content: center;
 }
+
+.cotainer-top {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+}
+
+.cotainer-top .left {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cotainer-top .left img {
+  width: 50%;
+  border-radius: 50%;
+}

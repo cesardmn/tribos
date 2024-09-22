@@ -1,0 +1,33 @@
+.blocks {
+  display: flex;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  height: 100%;
+}
+
+.page {
+  min-width: 100%;
+  height: inherit;
+  scroll-snap-align: start;
+  display: flex;
+  /* flex-direction: column; */
+  white-space: pre-line;
+  overflow: hidden;
+}
+
+.collumn  {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  gap: 0.5rem;
+  padding: 0.3rem;
+  line-height: 1.6;
+}
+
+.block {
+  white-space: pre-line;
+  text-align: center;
+  font-size: small;
+  border-top: 1px solid grey;
+}

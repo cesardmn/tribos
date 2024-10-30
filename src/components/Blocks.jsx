@@ -3,9 +3,7 @@ import styles from '@styles/Blocks.module.css'
 export default function Blocks() {
   return (
     <div className={styles.blocks}>
-
       <div className={styles.page}>
-
         <div className={styles.collumn}>
           <div className={styles.block}>
             {`1
@@ -40,10 +38,9 @@ CAN'T TAKE MY EYES ...
 RAEL + JA RULE
 PÉ NA AREIA`}
           </div>
-
         </div>
 
-        <div className={styles.collumn} >
+        <div className={styles.collumn}>
           <div className={styles.block}>
             {`6
           VÁRIAS QUEIXAS
@@ -72,14 +69,10 @@ PÉ NA AREIA`}
           VOU DEIXAR
           NÃO QUERO DINHEIRO`}
           </div>
-
         </div>
-
       </div>
 
-
       <div className={styles.page}>
-
         <div className={styles.collumn}>
           <div className={styles.block}>
             {`10
@@ -109,12 +102,9 @@ PÉ NA AREIA`}
             DANCING WITH MYSELF
             TAKE ON ME`}
           </div>
-
         </div>
 
-
         <div className={styles.collumn}>
-
           <div className={styles.block}>
             {`13
             AS IT WAS
@@ -147,9 +137,7 @@ PÉ NA AREIA`}
         </div>
       </div>
 
-
       <div className={styles.page}>
-
         <div className={styles.collumn}>
           <div className={styles.block}>
             {`17
@@ -166,7 +154,6 @@ PÉ NA AREIA`}
             MILA`}
           </div>
 
-
           <div className={styles.block}>
             {`19
             OLHAR 43
@@ -180,16 +167,10 @@ PÉ NA AREIA`}
             ROLLING THE DEEP
             POR VOCÊ`}
           </div>
-
-
         </div>
 
-
-        <div className={styles.collumn}>
-
-        </div>
+        <div className={styles.collumn}></div>
       </div>
     </div>
-  );
+  )
 }
-

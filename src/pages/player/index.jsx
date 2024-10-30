@@ -7,7 +7,7 @@ import { MdPlaylistPlay, MdDashboard } from 'react-icons/md'
 import { useState } from 'react'
 import Watch from '@/components/Watch'
 
-export default function App() {
+const PlayerApp = () => {
   const [page, setPage] = useState('AudioList')
 
   const toggleFullscreen = () => {
@@ -68,3 +68,5 @@ export default function App() {
     </>
   )
 }
+
+export default PlayerApp

@@ -16,7 +16,7 @@ export default function Player() {
 
   const handlePlayStop = () => {
     if (audioRef.current.src) {
-      setOnPlay(!onPlay)  
+      setOnPlay(!onPlay)
       if (onPlay) {
         audioRef.current.pause()
         audioRef.current.currentTime = 0

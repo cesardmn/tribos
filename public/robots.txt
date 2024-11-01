@@ -1,0 +1,12 @@
+# Permitir que todos os bots acessem apenas a página principal
+User-agent: *
+Allow: /
+
+# Bloquear acesso a todas as outras páginas
+Disallow: /*
+
+# Exceção para a homepage
+Allow: /$
+
+# Sitemap (opcional)
+# Sitemap: https://tribosbanda.com.br/sitemap.xml

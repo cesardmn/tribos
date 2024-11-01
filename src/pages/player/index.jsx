@@ -33,7 +33,7 @@ const PlayerApp = () => {
         <link rel="icon" href="./icon-384x384.png" sizes="384x384" />
         <link rel="icon" href="./icon-512x512.png" sizes="512x512" />
       </Head>
-      <main className="noSelect">
+      <div className="app">
         <div className="top box">
           <div className="cotainer-top">
             <div className="left" onClick={toggleFullscreen}>
@@ -64,7 +64,7 @@ const PlayerApp = () => {
             PLAYLIST
           </span>
         </nav>
-      </main>
+      </div>
     </>
   )
 }

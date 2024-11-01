@@ -74,7 +74,7 @@ body {
   background-color: #060102;
 }
 
-main {
+.app {
   display: grid;
   grid-template-rows: auto 1fr auto auto;
   padding-top: var(--sm-2);

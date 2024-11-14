@@ -1,0 +1,40 @@
+.logos {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: antiquewhite;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.container {
+  width: auto;
+  height: auto;
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.container img {
+  width: 80%;
+  height: auto;
+  max-height: 50vh;
+  margin: 1rem;
+}
+
+.icon {
+  color: white;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+}

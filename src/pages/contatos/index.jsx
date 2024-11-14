@@ -53,35 +53,53 @@ const Social = () => {
 
 const Contatos = () => {
   const [qrCode, setQrCode] = useState(true)
+  const [darkQrCode, setDarkQrCode] = useState(true)
+  const [qrCodeTheme, setQrCodeTheme] = useState('light')
 
   const toggleQrCode = () => {
     setQrCode(!qrCode)
+  }
+
+  const toggleQrCodeTheme = () => {
+    setDarkQrCode(!darkQrCode)
+    setQrCodeTheme(darkQrCode ? 'dark' : 'light')
   }
 
   return (
     <div className={styles.container}>
       <div className={styles.page}>
         <div className={styles.top} onClick={toggleQrCode}>
-          <dic className={styles.logo}>
-            <img src="/logos/skeleton/transparente.svg" alt="" />
-          </dic>
+          <div className={styles.logo}>
+            <img
+              src="/logos/skeleton/transparente.svg"
+              alt="Logo Transparente"
+            />
+          </div>
 
           <div className={styles.hero}>
-            <img src="/logos/tribos_transparencia.png" alt="" />
+            <img
+              src="/logos/tribos_transparencia.png"
+              alt="Logo Tribos Transparência"
+            />
             <h2>Música para eventos</h2>
           </div>
         </div>
 
-        <dib className={styles.bottom}>
+        <div className={styles.bottom}>
           {qrCode ? (
             <>
-              <img src="/qrcode/dark.svg" alt="" className={styles.qrcode} />
+              <img
+                src={`/qrcode/${qrCodeTheme}.svg`}
+                alt="QR Code"
+                className={styles.qrcode}
+                onClick={toggleQrCodeTheme}
+              />
               <h2>(21) 99631-1993</h2>
             </>
           ) : (
             <Social />
           )}
-        </dib>
+        </div>
       </div>
     </div>
   )

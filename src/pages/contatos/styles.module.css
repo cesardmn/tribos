@@ -110,6 +110,12 @@
   justify-content: center;
 }
 
+.qrcode {
+  height: auto;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 320px) {
   .page {
     padding: 0;
@@ -129,13 +135,11 @@
 }
 
 @media (max-width: 240px) {
-
   .page {
     grid-template-rows: 30% 70%;
-
   }
 
-  .hero{
+  .hero {
     padding: 0;
   }
 
@@ -155,10 +159,17 @@
     font-size: small;
     padding: 0.75rem;
   }
+
+  .qrcode {
+    width: 60%;
+  }
+
+  .bottom h2 {
+    font-size: medium;
+  }
 }
 
 @media print {
-
   .container {
     width: 210mm;
     height: 297mm;
@@ -171,7 +182,7 @@
 
   .top h2 {
     font-size: 2rem;
-  } 
+  }
 
   .social li a {
     text-decoration: none;

@@ -2,6 +2,7 @@ import styles from './styles.module.css'
 import { MdWhatsapp } from 'react-icons/md'
 import { TbBrandInstagram, TbBrandYoutube } from 'react-icons/tb'
 import { LuPhone, LuHome } from 'react-icons/lu'
+import { useState } from 'react'
 
 const Social = () => {
   return (
@@ -51,10 +52,16 @@ const Social = () => {
 }
 
 const Contatos = () => {
+  const [qrCode, setQrCode] = useState(true)
+
+  const toggleQrCode = () => {
+    setQrCode(!qrCode)
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.page}>
-        <div className={styles.top}>
+        <div className={styles.top} onClick={toggleQrCode}>
           <dic className={styles.logo}>
             <img src="/logos/skeleton/transparente.svg" alt="" />
           </dic>
@@ -66,7 +73,14 @@ const Contatos = () => {
         </div>
 
         <dib className={styles.bottom}>
-          <Social />
+          {qrCode ? (
+            <>
+              <img src="/qrcode/dark.svg" alt="" className={styles.qrcode} />
+              <h2>(21) 99631-1993</h2>
+            </>
+          ) : (
+            <Social />
+          )}
         </dib>
       </div>
     </div>

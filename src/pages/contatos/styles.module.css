@@ -1,0 +1,188 @@
+.container {
+  height: 100%;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  background-color: #060102;
+  width: 100%;
+  min-width: 240px;
+  max-width: 414px;
+
+  padding: 1rem;
+
+  height: auto;
+  max-height: 896px;
+  display: grid;
+  grid-template-rows: 25% 75%;
+
+  overflow: hidden;
+  color: #e2e2e2;
+  aspect-ratio: 9/14;
+}
+
+.top {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: smaller;
+  padding: 1rem;
+}
+
+.hero img {
+  height: auto;
+  width: 60%;
+}
+
+.bottom {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2.5rem;
+  align-items: center;
+}
+
+.social {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.social li {
+  display: flex;
+  height: auto;
+  width: 100%;
+  border: 1px solid #f5c04459;
+  list-style: none;
+  border-radius: 16px;
+  background-color: #1b1b1b;
+}
+
+.social li a {
+  text-decoration: none;
+  color: inherit;
+  font-size: xx-large;
+  padding: 1.5rem 3rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1rem;
+}
+
+.socialIcon {
+  display: flex;
+  height: 100%;
+  width: auto;
+  color: #f5c044;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 320px) {
+  .page {
+    padding: 0;
+  }
+
+  .logo {
+    padding: 0;
+  }
+
+  .logo img {
+    height: 50%;
+  }
+
+  .bottom {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 240px) {
+
+  .page {
+    grid-template-rows: 30% 70%;
+
+  }
+
+  .hero{
+    padding: 0;
+  }
+
+  .hero .logo img {
+    padding-top: 0;
+  }
+
+  .hero h2 {
+    font-size: small;
+  }
+
+  .social {
+    justify-content: flex-start;
+  }
+
+  .social li a {
+    font-size: small;
+    padding: 0.75rem;
+  }
+}
+
+@media print {
+
+  .container {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  .page {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .top h2 {
+    font-size: 2rem;
+  } 
+
+  .social li a {
+    text-decoration: none;
+    color: inherit;
+    font-size: xx-large;
+    padding: 2rem 4rem;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 3rem;
+  }
+}

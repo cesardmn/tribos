@@ -4,8 +4,74 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="logos/favicons/favicon.ico" />
+      <link
+          rel="icon"
+          href="./logos/favicons/favicon-16x16.png"
+          sizes="16x16"
+        />
+        <link
+          rel="icon"
+          href="./logos/favicons/favicon-32x32.png"
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          href="./logos/favicons/favicon-96x96.png"
+          sizes="96x96"
+        />
 
+        <link
+          rel="icon"
+          href="./logos/favicons/android-icon-96x96.png"
+          sizes="96x96"
+        />
+        <link
+          rel="icon"
+          href="./logos/favicons/android-icon-144x144.png"
+          sizes="144x144"
+        />
+
+        <link
+          rel="apple-touch-icon"
+          href="./logos/favicons/apple-icon-57x57.png"
+          sizes="57x57"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="./logos/favicons/apple-icon-60x60.png"
+          sizes="60x60"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="./logos/favicons/apple-icon-72x72.png"
+          sizes="72x72"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="./logos/favicons/apple-icon-76x76.png"
+          sizes="76x76"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="./logos/favicons/apple-icon-144x144.png"
+          sizes="144x144"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="./logos/favicons/apple-icon-152x152.png"
+          sizes="152x152"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="./logos/favicons/apple-icon-180x180.png"
+          sizes="180x180"
+        />
+
+        <meta
+          name="msapplication-TileImage"
+          content="./logos/favicons/android-icon-144x144.png"
+        />
+        <meta name="msapplication-TileColor" content="#ffffff" />
         <meta
           name="description"
           content="Tribos oferece uma experiência sonora única com um repertório diversificado, dos clássicos dos anos 80 aos hits atuais do pop."

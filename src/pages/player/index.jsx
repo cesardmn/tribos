@@ -28,16 +28,12 @@ const PlayerApp = () => {
         <title>Tribos</title>
         <meta name="description" content="Tribos Website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="./icon-192x192.png" sizes="192x192" />
-        <link rel="icon" href="./icon-256x256.png" sizes="256x256" />
-        <link rel="icon" href="./icon-384x384.png" sizes="384x384" />
-        <link rel="icon" href="./icon-512x512.png" sizes="512x512" />
       </Head>
       <div className="app">
         <div className="top box">
           <div className="cotainer-top">
             <div className="left" onClick={toggleFullscreen}>
-              <img src="./icon-192x192.png" alt="Logo" />
+              <img src="./logos/skeleton/transparente.svg" alt="Logo" />
               <Watch />
             </div>
 

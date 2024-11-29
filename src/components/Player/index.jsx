@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { useOnPlay } from '@/providers/OnPlayProvider'
 import { useAudio } from '@/providers/AudioProvider'
-import { formatTime } from '../utils/index'
-import styles from '@styles/Player.module.css'
+import { formatTime } from '../../utils/index'
+import styles from './styles.module.css'
 import { TbPlayerPlayFilled, TbPlayerStopFilled } from 'react-icons/tb'
-import Wave from '@components/Wave'
+import Wave from '@/components/Wave/Wave'
 
 export default function Player() {
   const { onPlay, setOnPlay } = useOnPlay()

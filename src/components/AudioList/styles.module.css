@@ -1,17 +1,17 @@
 .ul {
   height: 100%;
   width: 100%;
-
   display: flex;
   flex-direction: column;
+  overflow: scroll;
+  margin-bottom: 1rem;
 }
 
 .li {
   height: var(--lg-3);
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   border-bottom: 1px solid var(--text-bolder);
-  font-size: large;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -1,0 +1,23 @@
+{
+  "name": "Tribos",
+  "short_name": "Tribos",
+  "start_url": "/player",
+  "display": "standalone",
+  "background_color": "#060102",
+  "theme_color": "#060102",
+  "icons": [
+    {
+      "src": "logos/favicons/apple-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "pwa_screen.jpg",
+      "sizes": "1024x768",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}

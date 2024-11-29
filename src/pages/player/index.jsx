@@ -1,14 +1,17 @@
 import Head from 'next/head'
 import Player from '@/components/Player'
 import AudioList from '@/components/AudioList'
-import StopWatch from '@/components/StopWatch'
+import StopWatch from '@/components/StopWatch/StopWatch'
 import Blocks from '@/components/Blocks'
 import { MdPlaylistPlay, MdDashboard } from 'react-icons/md'
 import { useState } from 'react'
-import Watch from '@/components/Watch'
+import Watch from '@/components/Watch/Watch'
+
+import styles from './styles.module.css'
 
 const PlayerApp = () => {
   const [page, setPage] = useState('AudioList')
+  const [pdf, setPdf] = useState(null) // Estado para o PDF
 
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
@@ -25,41 +28,51 @@ const PlayerApp = () => {
   return (
     <>
       <Head>
-        <title>Tribos</title>
-        <meta name="description" content="Tribos Website" />
+        <title>Tribos Player</title>
+        <meta name="description" content="Tribos Player" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className="app">
-        <div className="top box">
-          <div className="cotainer-top">
-            <div className="left" onClick={toggleFullscreen}>
-              <img src="./logos/skeleton/transparente.svg" alt="Logo" />
-              <Watch />
-            </div>
 
+      <div className={styles.app}>
+        <header className={styles.box}>
+          <div className={styles.full} onClick={toggleFullscreen}>
+            <img src="./logos/skeleton/transparente.svg" alt="Logo" />
+            <Watch />
+          </div>
+
+          <div className={styles.sw}>
             <StopWatch />
           </div>
-        </div>
+        </header>
 
-        <div className="content box">
-          {page === 'AudioList' && <AudioList />}
-          {page === 'Blocks' && <Blocks />}
-        </div>
+        <main>
+          {page === 'AudioList' && (
+            <div className={styles.appPlayer}>
+              <div className={styles.box}>
+                <AudioList />
+              </div>
 
-        <div className="box">
-          <Player />
-        </div>
+              <div className={styles.box}>
+                <Player />
+              </div>
+            </div>
+          )}
+          {page === 'Blocks' && <Blocks pdf={pdf} setPdf={setPdf} />}{' '}
+          {/* Passando pdf e setPdf para Blocks */}
+        </main>
 
-        <nav>
-          <span onClick={() => setPage('Blocks')}>
-            <MdDashboard />
-            BLOCOS
-          </span>
-          <span onClick={() => setPage('AudioList')}>
-            <MdPlaylistPlay />
-            PLAYLIST
-          </span>
-        </nav>
+        <footer>
+          <nav>
+            <span onClick={() => setPage('Blocks')}>
+              <MdDashboard />
+              BLOCOS
+            </span>
+            <span onClick={() => setPage('AudioList')}>
+              <MdPlaylistPlay />
+              PLAYER
+            </span>
+          </nav>
+        </footer>
       </div>
     </>
   )

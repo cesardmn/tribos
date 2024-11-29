@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react'
 import { usePlaylist } from '@providers/PlaylistProvider'
-import styles from '@styles/AudioList.module.css'
+import styles from './styles.module.css'
 import { useAudio } from '@providers/AudioProvider'
 import InputFiles from '@/components/InputFiles'
-import { useEffect, useState } from 'react'
 
 export default function AudioList() {
   const { playlist } = usePlaylist()

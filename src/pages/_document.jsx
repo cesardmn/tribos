@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-      <link
+        <link
           rel="icon"
           href="./logos/favicons/favicon-16x16.png"
           sizes="16x16"
@@ -119,6 +119,8 @@ export default function Document() {
           hrefLang="x-default"
           href="https://tribosbanda.com.br/"
         />
+
+        <link rel="manifest" href="/manifest.json" />
       </Head>
 
       <body>

@@ -1,4 +1,4 @@
-import styles from '@styles/Wave.module.css'
+import styles from './styles.module.css'
 import { useOnPlay } from '@/providers/OnPlayProvider'
 
 export default function Wave() {

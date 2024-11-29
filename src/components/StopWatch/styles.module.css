@@ -1,11 +1,11 @@
 .StopWatch {
-  height: auto;
-  width: 80%;
+  height: 100%;
+  width: auto;
   display: flex;
-  font-size: var(--lg-2);
+  align-items: center;
+  margin-right: var(--md-1);
+  font-size: var(--lg-1);
   font-weight: bold;
-  padding: 0.2rem;
-  margin-right: 0.2rem;
   font-variant-numeric: tabular-nums;
 }
 

@@ -35,25 +35,23 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
 }
 
 html,
 body,
 #__next {
   height: 100%;
+  width: 100%;
 }
 
 #__next {
   display: flex;
-  justify-content: center;
-}
-
-.noSelect {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  overflow: hidden;
   user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -70,106 +68,12 @@ body {
     'Open Sans',
     'Helvetica Neue',
     sans-serif;
-  overscroll-behavior: none;
   background-color: #060102;
+  line-height: 1.6;
 }
 
-.app {
-  display: grid;
-  grid-template-rows: auto 1fr auto auto;
-  padding-top: var(--sm-2);
-  gap: var(--sm-2);
-  width: 100%;
-  max-width: 450px;
-  height: 100%;
-  background-color: #fbab7e;
-  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
-}
-
-.top {
-  height: auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 var(--sm-3);
-}
-.box {
-  width: unset;
-  border-radius: var(--sm-2);
-  background-color: var(--box);
-  color: antiquewhite;
-  box-shadow: var(--shadow);
-  margin: 0 var(--sm-2);
-  overflow: hidden;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--lg-2);
-  border-radius: 50%;
-  padding: 0.4rem;
-  width: 60px;
-  height: 60px;
-  background-color: #060102;
-}
-
-.logo img {
-  height: 100%;
-  width: auto;
-  border-radius: 50%;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.content::-webkit-scrollbar {
-  display: none;
-}
-
-nav {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  gap: var(--sm-2);
-  justify-content: space-around;
-  align-items: center;
-  border-top: 1px solid var(--complementary);
-}
-
-nav span {
-  padding: var(--sm-1) 0;
-  height: 100%;
-  width: 100%;
-  font-size: var(--md-3);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cotainer-top {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1rem;
-}
-
-.cotainer-top .left {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.cotainer-top .left img {
-  width: 50%;
-  border-radius: 50%;
+@media (max-width: 240px) {
+  * {
+    font-size: 60%;
+  }
 }

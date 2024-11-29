@@ -4,11 +4,11 @@ import React, { useEffect, useRef } from 'react'
 import { useAudio } from '@providers/AudioProvider'
 import { usePlaylist } from '@providers/PlaylistProvider'
 
-import { formatTime } from '../utils/index'
+import { formatTime } from '../../utils'
 
 import { MdAudioFile } from 'react-icons/md'
 
-import styles from '@styles/InputFiles.module.css'
+import styles from './styles.module.css'
 
 export default function InputFiles() {
   const { setAudio, audio } = useAudio()

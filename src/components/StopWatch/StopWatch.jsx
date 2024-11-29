@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { formatWatch } from '../utils/index'
+import { formatWatch } from '../../utils'
 
-import styles from '@styles/StopWatch.module.css'
+import styles from './styles.module.css'
 
 export default function StopWatch() {
   const [time, setTime] = useState(0)
@@ -28,7 +28,9 @@ export default function StopWatch() {
 
   const handleRunning = () => {
     running ? pause() : play()
-    window.navigator.vibrate(70)
+    try {
+      window.navigator.vibrate(70)
+    } catch (error) {}
   }
 
   const handleReset = () => {

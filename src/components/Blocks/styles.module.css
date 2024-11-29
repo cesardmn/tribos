@@ -1,0 +1,13 @@
+.blocks {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.blocks embed {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}

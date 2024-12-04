@@ -98,7 +98,7 @@
 @media (max-width: 1024px) {
   .page {
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 40% 60%;
     grid-template-columns: 1fr;
     grid-template-areas:
       'map'
@@ -167,6 +167,12 @@
   }
   .top img {
     height: 40%;
+  }
+}
+
+@media (max-width: 320px) {
+  .contact {
+    font-size: 80%;
   }
 }
 

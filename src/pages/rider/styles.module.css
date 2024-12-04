@@ -1,0 +1,182 @@
+.page {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background-color: #fff;
+  grid-template-columns: 30% 70%;
+  padding: 1rem;
+  border: 1px solid black;
+  overflow: hidden;
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  user-select: none;
+}
+
+.checklistContainer {
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  height: 100%;
+  border-right: 1px solid #e2e2e2;
+  overflow: hidden;
+  font-size: smaller;
+
+  & h2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: #a3a3a3;
+  }
+}
+
+.imgContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  & img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.top {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  & img {
+    height: 60%;
+  }
+
+  & h2 {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checklistItem {
+  margin-bottom: 1.5rem;
+}
+
+.checklistDetail {
+  margin-left: 1.5rem;
+  list-style: none;
+}
+
+.contact {
+  color: #8d8d8d;
+  font-weight: bold;
+}
+
+.map {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .page {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'map'
+      'list';
+    padding: 0.5rem;
+  }
+
+  .checklistContainer {
+    grid-area: list;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75% 25%;
+    grid-template-areas:
+      'checklist checklist'
+      'contact top';
+    gap: 1rem;
+    border: none;
+    padding: 1rem;
+  }
+
+  .map {
+    grid-area: map;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .top {
+    grid-area: top;
+  }
+
+  .checklist {
+    grid-area: checklist;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: smaller;
+    gap: 0.5rem;
+  }
+
+  .checklistItem,
+  .checklistDetail {
+    margin: 0;
+  }
+
+  .contact {
+    grid-area: contact;
+    color: #8d8d8d;
+    font-weight: bold;
+  }
+
+  .checklistContainer h2 {
+    font-size: small;
+  }
+
+  .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .imgContainer img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .top img {
+    height: 40%;
+  }
+}
+
+@media print {
+  .page {
+    height: 210mm;
+    width: 297mm;
+  }
+
+  .checklistContainer {
+    font-size: medium;
+  }
+}
